@@ -67,7 +67,7 @@ classificacao_spam/
 pip install -r requirements.txt
 ```
 
-**3. Baixe o dataset** no [Kaggle — Spam Email Dataset](https://www.kaggle.com/code/balaka18/email-spam-classification/input) e coloque o arquivo `emails.csv` em `data/raw/emails/`.
+**3. Em caso de algum erro com o csv, baixe o dataset** no [Kaggle — Spam Email Dataset](https://www.kaggle.com/code/balaka18/email-spam-classification/input) e coloque o arquivo `emails.csv` em `data/raw/emails/`.
 
 **4. Execute os scripts na ordem:**
 ```bash
