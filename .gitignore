@@ -9,3 +9,6 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+ 
+# Dataset
+data/raw/
