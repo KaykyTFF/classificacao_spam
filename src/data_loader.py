@@ -45,7 +45,7 @@ def separar_dados(df, tamanho_teste=0.2, semente=42):
 # BLOCO DE TESTE DO MÓDULO
 # ==========================================
 if __name__ == "__main__":
-    caminho_csv = "../data/raw/emails/emails.csv"
+    caminho_csv = "data/raw/emails/emails.csv"
     
     print("Iniciando o carregamento do dataset numérico...\n")
     
