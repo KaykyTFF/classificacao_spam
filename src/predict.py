@@ -2,13 +2,14 @@ import joblib
 import pandas as pd
 
 def simular_previsao(indice_amostra=0):
-    # Carrega o modelo de Regressao Logistica (melhor desempenho)
+
+    # Carrega o modelo de Regressao Logistica 
     modelo = joblib.load("../results/models/modelo_lr.pkl")
     
     # Carrega a base de dados de teste isolada na etapa de treinamento
     X_teste, y_teste = joblib.load("../results/models/dados_teste.pkl")
     
-    # Extrai uma unica linha (amostra) com base no indice fornecido
+    # Extrai uma unica linha com base no indice fornecido
     dados_email = X_teste.iloc[[indice_amostra]]
     gabarito_real = y_teste.iloc[indice_amostra]
     

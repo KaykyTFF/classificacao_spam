@@ -2,8 +2,6 @@ import os
 import joblib
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
-
-# Importamos as funções que criamos no passo anterior!
 from data_loader import carregar_e_limpar_dados, separar_dados
 
 def treinar_modelos(X_treino, y_treino):
@@ -12,10 +10,10 @@ def treinar_modelos(X_treino, y_treino):
     """
     print("-> Ensinando o modelo Naive Bayes...")
     modelo_nb = MultinomialNB()
-    modelo_nb.fit(X_treino, y_treino) # O .fit() é onde a IA aprende os padrões
+    modelo_nb.fit(X_treino, y_treino) 
 
     print("-> Ensinando o modelo de Regressão Logística...")
-    # max_iter=1000 garante que o modelo tenha tempo (tentativas) suficiente para aprender
+    # max_iter=1000 garante que o modelo tenha tempo suficiente para aprender
     modelo_lr = LogisticRegression(max_iter=1000)
     modelo_lr.fit(X_treino, y_treino)
 
@@ -28,11 +26,11 @@ def salvar_modelos(modelo_nb, modelo_lr, pasta_destino="../results/models/"):
     # Garante que a pasta de destino existe
     os.makedirs(pasta_destino, exist_ok=True)
 
-    # Definimos os nomes dos arquivos
+    # Define os nomes dos arquivos
     caminho_nb = os.path.join(pasta_destino, "modelo_nb.pkl")
     caminho_lr = os.path.join(pasta_destino, "modelo_lr.pkl")
 
-    # A função dump "congela" a inteligência e salva no HD
+    # A função dump e salva no HD
     joblib.dump(modelo_nb, caminho_nb)
     joblib.dump(modelo_lr, caminho_lr)
 
