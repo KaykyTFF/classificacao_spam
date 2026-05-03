@@ -1,32 +1,53 @@
-# Projeto de Classificação de E-mails (Spam vs Ham)
-**Disciplina:** Inteligência Artificial - IFPI Campus Paulistana  
-**Docente:** Maíla de Lima Claro  
-**Discente:** Kayky Terles Ferreira Feitosa, RAILI SAWENI DE SOUSA REIS, 
-Giselly Carvalho Cavalcante, Josimar Rodrigues de Macedo Filho, 
+📧 Classificação de E-mails — Spam ou Não Spam
+Disciplina: Inteligência Artificial — IFPI Campus Paulistana
+Docente: Maíla de Lima Claro
+Discentes:
+
+Kayky Terles Ferreira Feitosa
+Raili Saweni de Sousa Reis
+Giselly Carvalho Cavalcante
+Josimar Rodrigues de Macedo Filho
 Pedro Ravy Teixeira de Sousa
 
-## 1. Descrição do Problema
-O objetivo deste projeto é desenvolver um modelo de Machine Learning capaz de classificar e-mails automaticamente entre "Spam" e "Não Spam", utilizando algoritmos de Naive Bayes e Regressão Logística.
 
-## 2. Tecnologias Utilizadas
-- Python 3.12
-- Pandas & NumPy (Manipulação de dados)
-- Scikit-learn (Algoritmos de ML e métricas)
-- Matplotlib & Seaborn (Visualização de resultados)
-- Joblib (Persistência do modelo treinado)
+Descrição do Problema
+O objetivo deste projeto é desenvolver um sistema de Machine Learning capaz de classificar e-mails automaticamente como Spam ou Não Spam, utilizando três algoritmos de aprendizado supervisionado: Naive Bayes, Regressão Logística e Random Forest.
+O dataset utilizado é numérico no formato Bag of Words, onde cada coluna representa a frequência de uma palavra no e-mail. Foi obtido na plataforma Kaggle.
 
-## 3. Estrutura do Projeto
-- `data/raw/`: Base de dados original (Spam Email Dataset).
-- `src/`: Scripts de carregamento, treino, avaliação e predição.
-- `results/models/`: Arquivos `.pkl` dos modelos treinados.
-- `results/figures/`: Gráficos de Matriz de Confusão gerados.
+Tecnologias Utilizadas
+BibliotecaFinalidadePython 3.12Linguagem principalPandas & NumPyManipulação de dadosScikit-learnAlgoritmos de ML e métricasMatplotlib & SeabornVisualização de resultadosJoblibPersistência dos modelos treinados
 
-## 4. Como Executar
-1. Ative o ambiente virtual: `.\venv\Scripts\activate`
-2. Instale as dependências: `pip install -r requirements.txt`
-3. Para treinar: `python src/train.py`
-4. Para avaliar: `python src/evaluate.py`
-5. Para testar uma previsão: `python src/predict.py`
+Estrutura do Projeto
+classificacao_spam/
+├── data/
+│   └── raw/
+│       └── emails/
+│           └── emails.csv        # Dataset (não versionado)
+├── notebooks/
+│   └── email-spam-classification.ipynb
+├── results/
+│   ├── figures/                  # Gráficos gerados
+│   └── models/                   # Modelos .pkl treinados
+├── data_loader.py
+├── train.py
+├── evaluate.py
+├── predict.py
+├── compare_models.py
+├── requirements.txt
+└── README.md
 
-## 5. Resultados Obtidos
-O modelo de **Regressão Logística** apresentou o melhor desempenho com **97.2% de Acurácia**.
+Como Executar
+1. Clone o repositório e ative o ambiente virtual:
+bash.\venv\Scripts\activate
+2. Instale as dependências:
+bashpip install -r requirements.txt
+3. Baixe o dataset no Kaggle — Spam Email Dataset e coloque o arquivo emails.csv em data/raw/emails/.
+4. Execute os scripts na ordem:
+bashpython train.py      # Treina e salva os modelos
+python evaluate.py   # Avalia e gera os gráficos
+python predict.py    # Testa a classificação de e-mails individuais
+Ou abra o notebook email-spam-classification.ipynb para ver o pipeline completo de forma interativa.
+
+Resultados Obtidos
+ModeloAccuracyPrecisionRecallF1-ScoreNaive Bayes95,46%89,03%95,95%92,36%Regressão Logística96,72%90,36%98,32%94,18%Random Forest97,78%95,96%96,28%96,12%
+O Random Forest obteve o melhor desempenho geral. A Regressão Logística se destacou pelo maior Recall (98,32%), sendo ideal para cenários onde detectar o máximo de spams é prioritário.
