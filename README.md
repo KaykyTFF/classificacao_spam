@@ -1,4 +1,4 @@
-# 📧 Classificação de E-mails — Spam ou Não Spam
+# Classificação de E-mails — Spam ou Não Spam
 
 **Disciplina:** Inteligência Artificial — IFPI Campus Paulistana  
 **Docente:** Maíla de Lima Claro  
@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Descrição do Problema
+## Descrição do Problema
 
 O objetivo deste projeto é desenvolver um sistema de Machine Learning capaz de classificar e-mails automaticamente como **Spam** ou **Não Spam**, utilizando três algoritmos de aprendizado supervisionado: Naive Bayes, Regressão Logística e Random Forest.
 
@@ -19,7 +19,7 @@ O dataset utilizado é numérico no formato Bag of Words, onde cada coluna repre
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Biblioteca | Finalidade |
 |---|---|
@@ -31,14 +31,14 @@ O dataset utilizado é numérico no formato Bag of Words, onde cada coluna repre
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 classificacao_spam/
 ├── data/
 │   └── raw/
 │       └── emails/
-│           └── emails.csv        # Dataset (não versionado)
+│           └── emails.csv
 ├── notebooks/
 │   └── email-spam-classification.ipynb
 ├── results/
@@ -55,7 +55,7 @@ classificacao_spam/
 
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 **1. Clone o repositório e ative o ambiente virtual:**
 ```bash
@@ -67,7 +67,7 @@ classificacao_spam/
 pip install -r requirements.txt
 ```
 
-**3. Baixe o dataset** no [Kaggle — Spam Email Dataset](https://www.kaggle.com) e coloque o arquivo `emails.csv` em `data/raw/emails/`.
+**3. Baixe o dataset** no [Kaggle — Spam Email Dataset](https://www.kaggle.com/code/balaka18/email-spam-classification/input) e coloque o arquivo `emails.csv` em `data/raw/emails/`.
 
 **4. Execute os scripts na ordem:**
 ```bash
@@ -80,7 +80,7 @@ Ou abra o notebook `email-spam-classification.ipynb` para ver o pipeline complet
 
 ---
 
-## 📊 Resultados Obtidos
+## Resultados Obtidos
 
 | Modelo | Accuracy | Precision | Recall | F1-Score |
 |---|---|---|---|---|
