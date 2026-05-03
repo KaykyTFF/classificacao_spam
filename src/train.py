@@ -3,6 +3,8 @@ import joblib
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 from data_loader import carregar_e_limpar_dados, separar_dados
 
 def treinar_modelos(X_treino, y_treino):
@@ -11,9 +13,13 @@ def treinar_modelos(X_treino, y_treino):
     modelo_nb = MultinomialNB()
     modelo_nb.fit(X_treino, y_treino)
 
-    # Treina a Regressão Logística
-    print("-> Ensinando o modelo de Regressão Logística...")
-    modelo_lr = LogisticRegression(max_iter=1000)  # max_iter evita erro de convergência
+    # Treina a Regressão Logística com StandardScaler dentro de um Pipeline
+    # O scaler normaliza os dados antes do modelo, melhorando a convergência
+    print("-> Ensinando o modelo de Regressão Logística (com normalização)...")
+    modelo_lr = Pipeline([
+        ('scaler', StandardScaler()),
+        ('lr', LogisticRegression(max_iter=1000))
+    ])
     modelo_lr.fit(X_treino, y_treino)
 
     # Treina o Random Forest, conjunto de várias árvores de decisão

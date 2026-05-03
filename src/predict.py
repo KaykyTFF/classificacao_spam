@@ -3,11 +3,11 @@ import pandas as pd
 
 def simular_previsao(indice_amostra=0):
 
-    # Carrega o modelo de Regressao Logistica 
-    modelo = joblib.load("../results/models/modelo_lr.pkl")
+    # Carrega o modelo de Regressao Logistica (Pipeline com scaler incluso)
+    modelo = joblib.load("results/models/modelo_lr.pkl")
     
     # Carrega a base de dados de teste isolada na etapa de treinamento
-    X_teste, y_teste = joblib.load("../results/models/dados_teste.pkl")
+    X_teste, y_teste = joblib.load("results/models/dados_teste.pkl")
     
     # Extrai uma unica linha com base no indice fornecido
     dados_email = X_teste.iloc[[indice_amostra]]

@@ -75,6 +75,7 @@ if __name__ == "__main__":
     print("=======================================")
 
     # Carrega os modelos salvos na etapa de treinamento
+    # então o scaler é aplicado automaticamente no predict()
     modelo_nb = joblib.load("results/models/modelo_nb.pkl")
     modelo_lr = joblib.load("results/models/modelo_lr.pkl")
     modelo_rf = joblib.load("results/models/modelo_rf.pkl")
