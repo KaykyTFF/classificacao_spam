@@ -62,6 +62,13 @@ classificacao_spam/
 .\venv\Scripts\activate
 ```
 
+> **Erro ao ativar o ambiente virtual?** Verifique se o repositório `classificacao_spam` não está dentro de outra pasta com o mesmo nome (isso acontece ao baixar o ZIP do GitHub). Se estiver, basta mover a pasta interna para fora. Caso prefira resolver pelo terminal, execute:
+> ```bash
+> cd classificacao_spam-main
+> py -m venv venv
+> .\venv\Scripts\Activate.ps1
+> ```
+
 **2. Instale as dependências:**
 ```bash
 pip install -r requirements.txt
